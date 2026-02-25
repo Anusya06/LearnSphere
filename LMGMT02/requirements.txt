@@ -1,0 +1,6 @@
+streamlit==1.36.0
+groq
+gtts==2.4.0
+networkx==3.3
+pygraphviz==1.13
+pillow==10.4.0
