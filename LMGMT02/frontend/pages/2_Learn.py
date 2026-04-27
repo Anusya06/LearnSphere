@@ -250,18 +250,23 @@ st.markdown("""
     .hero-title {
         font-size: 3rem;
         font-weight: 800;
-        color: white !important;
+        color: #ffffff !important;
         margin: 0;
         letter-spacing: -0.5px;
         -webkit-font-smoothing: antialiased !important;
         text-rendering: optimizeLegibility !important;
+        /* Force white — override any global color rules */
+        -webkit-text-fill-color: #ffffff !important;
+        opacity: 1 !important;
     }
     
     .hero-subtitle {
         font-size: 1.3rem;
         color: rgba(255,255,255,0.95) !important;
+        -webkit-text-fill-color: rgba(255,255,255,0.95) !important;
         margin-top: 0.5rem;
         font-weight: 500;
+        opacity: 1 !important;
         -webkit-font-smoothing: antialiased !important;
     }
     
@@ -1426,8 +1431,8 @@ def main():
     # Professional Hero Header
     st.markdown("""
         <div class="hero-header">
-            <h1 class="hero-title">🚀 LearnSphere AI</h1>
-            <p class="hero-subtitle">Your Personal AI Learning Companion</p>
+            <h1 style="font-size:3rem;font-weight:800;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;margin:0;letter-spacing:-0.5px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;">🚀 LearnSphere AI</h1>
+            <p style="font-size:1.3rem;color:rgba(255,255,255,0.95)!important;-webkit-text-fill-color:rgba(255,255,255,0.95)!important;margin-top:0.5rem;font-weight:500;-webkit-font-smoothing:antialiased;">Your Personal AI Learning Companion</p>
         </div>
     """, unsafe_allow_html=True)
     
