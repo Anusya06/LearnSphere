@@ -1,0 +1,245 @@
+﻿/* Dark Mode Custom CSS - LearnSphere Pro */
+
+/* Color Variables */
+:root {
+    --bg-primary: #0e1117;
+    --bg-secondary: #1e1e1e;
+    --bg-tertiary: #262730;
+    --text-primary: #fafafa;
+    --text-secondary: #b0b0b0;
+    --border-color: #3e3e3e;
+    --primary-color: #667eea;
+    --primary-hover: #5568d3;
+    --success: #10b981;
+    --error: #ef4444;
+    --warning: #f59e0b;
+}
+
+/* Streamlit Theme Variables - Auto-adapt to light/dark mode */
+[data-testid="stAppViewContainer"] {
+    --background-color: var(--background-color, #0e1117);
+    --secondary-background-color: var(--secondary-background-color, #262730);
+    --text-color: var(--text-color, #fafafa);
+    --secondary-text-color: var(--secondary-text-color, #b0b0b0);
+}
+
+/* Light mode overrides */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8f9fa;
+        --bg-tertiary: #e9ecef;
+        --text-primary: #1a1a1a;
+        --text-secondary: #6c757d;
+        --border-color: #dee2e6;
+    }
+}
+
+/* Global Styles - crisp font rendering */
+*, *::before, *::after {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+}
+
+body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* All text should be light colored - targeted, not wildcard */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+p { color: var(--text-primary) !important; }
+
+/* Widget labels - always bright white */
+label,
+.stWidgetLabel,
+[data-testid="stWidgetLabel"],
+.stTextInput label,
+.stTextArea label,
+.stSelectbox label,
+.stNumberInput label,
+.stRadio > label,
+.stCheckbox > label,
+.stSlider label,
+.stFileUploader label {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+}
+
+/* Input values */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea,
+.stNumberInput > div > div > input {
+    color: #ffffff !important;
+}
+
+/* Placeholder */
+input::placeholder, textarea::placeholder {
+    color: rgba(255,255,255,0.45) !important;
+    opacity: 1 !important;
+}
+
+/* Selectbox */
+[data-baseweb="select"] span,
+[data-baseweb="select"] div {
+    color: #ffffff !important;
+}
+
+/* Sidebar nav */
+[data-testid="stSidebar"] * {
+    color: #ffffff !important;
+}
+
+[data-testid="stSidebarNav"] a {
+    color: #e0e0e0 !important;
+    font-weight: 500 !important;
+}
+
+/* Tab text */
+.stTabs [data-baseweb="tab"] span { color: #c0c0c0 !important; }
+.stTabs [aria-selected="true"] span { color: #ffffff !important; }
+
+/* Cards */
+.card {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 15px !important;
+    padding: 20px !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important;
+}
+
+/* Buttons */
+button {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+button:hover {
+    background-color: var(--primary-hover) !important;
+}
+
+/* Input Fields */
+input, textarea, select {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Code Blocks */
+code, pre {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}
+
+/* Sidebar Navigation Fix - Classic Hamburger Menu */
+/* Hide the default >> collapse button */
+[data-testid="collapsedControl"] {
+    display: none !important;
+}
+
+/* Ensure sidebar toggle button is always visible */
+button[kind="header"] {
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Style the hamburger menu icon */
+[data-testid="stSidebarNav"] button[kind="header"] {
+    background: transparent !important;
+    border: none !important;
+    padding: 0.5rem !important;
+}
+
+/* Make sure the sidebar can be toggled */
+[data-testid="stSidebar"] {
+    transition: all 0.3s ease !important;
+}
+
+/* Ensure the main hamburger menu button is always visible */
+.css-1dp5vir {
+    display: block !important;
+}
+
+/* Force hamburger menu to be visible in header */
+header button[aria-label="Open navigation menu"],
+header button[aria-label="Close navigation menu"] {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Style the hamburger icon */
+header svg {
+    color: var(--text-primary) !important;
+}
+
+/* Fix expander arrow overlapping label text */
+.streamlit-expanderHeader {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.streamlit-expanderHeader p {
+    margin: 0 !important;
+    flex: 1 !important;
+}
+
+.streamlit-expanderHeader svg {
+    flex-shrink: 0 !important;
+    min-width: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+[data-testid="stExpander"] summary {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+[data-testid="stExpander"] summary svg {
+    flex-shrink: 0 !important;
+    min-width: 16px !important;
+}
